@@ -1,4 +1,10 @@
 ---
+// importamos estilos globales
+import '../styles/global.css';
+
+// Importamos componentes reutilizables
+import Navigation from '../components/Navigation.astro';
+
 const siteName = "Mi Blogcito";
 const pageTitle = "Sobre mi";
 
@@ -39,12 +45,12 @@ const textCase = "uppercase";
                 font-weight: var(--fontWeight);
                 text-transform: var(--textCase);
             }
+
         </style>
 	</head>
 	<body>
-		<a href="/">Inicio</a>
-		<a href="/about/">Sobre mi</a>
-		<a href="/blog/">Blog</a>
+        <div class="site-wrapper">
+            <Navigation />
         <h1>{pageTitle}</h1>
         <h2>¡Mi nuevo sitio Astro!</h2>
         <p>Estoy trabajando en el tutorial introductorio de Astro. Esta es la segunda página de mi sitio web, ¡y es la primera que he construido yo mismo!</p>
@@ -67,5 +73,6 @@ const textCase = "uppercase";
         {finished && <p>I finished this tutorial!</p>}
 
         {goal === 3 ? <p>My goal is to finish in 3 days.</p> : <p>My goal is not 3 days</p>}
-	    </body>
+    </div>
+    </body>
 </html>

@@ -1,4 +1,10 @@
 ---
+// importamos estilos globales
+import '../styles/global.css';
+
+// Importamos componentes reutilizables
+import Navigation from '../components/Navigation.astro';
+
 const siteName = "Mi Blogcito"
 const pageTitle = "Página de inicio"
 
@@ -12,13 +18,13 @@ const pageTitle = "Página de inicio"
 		<meta name="generator" content={Astro.generator} />
 		<title>{pageTitle} - {siteName}</title>
 	</head>
-	<body>
-		<a href="/">Inicio</a>
-		<a href="/about/">Sobre mi</a>
-		<a href="/blog/">Blog</a>
-		<h1>{siteName} ¡Take your passion and make it happen! &#128515; </h1>
-		<h1>{pageTitle}</h1>
-
-
+	<body>		
+		<div class="site-wrapper">
+			<Navigation />
+			<h1>{siteName} ¡Take your passion and make it happen! &#128515; </h1>
+			<h1>{pageTitle}</h1>
+			
+			
+		</div>
 	</body>
 </html>
