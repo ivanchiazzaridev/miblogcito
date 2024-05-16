@@ -1,42 +1,21 @@
 ---
-// importamos estilos globales
-import '../styles/global.css';
+// Importamos Layout Base
+import BaseLayout from '../layouts/BaseLayout.astro';
 
-// Importamos componentes reutilizables
-import Footer from '../components/Footer.astro';
-import Header from '../components/Header.astro';
 
-const siteName = "Mi Blogcito"
-const pageTitle = "Mi blog de Astro aprendizaje"
+
+const pageTitle = ""
 
 ---
 <!-- Frontmatter END -->
+<BaseLayout pageTitle={pageTitle}  >
+    <h1>¡I &#128156; Astro!</h1>
 
-<html lang="es">
-	<head>
-		<meta charset="UTF-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{pageTitle} - {siteName}</title>
-	</head>
-	<!-- Body -->    
-	<body>
-        <div class="site-wrapper"><!-- Repeticion (Refact Layout) -->            
-            <Header /> <!-- Repeticion (Refact Layout) -->
-            <h1>{pageTitle}</h1><!-- Repeticion (Refact Layout) -->
-            <p>Aquí es donde publicaré sobre mi viaje de aprendizaje Astro.</p>
-            <ul>
-                <li><a href="/posts/post-1">Publicación 1</a></li>
-                <li><a href="/posts/post-2">Publicación 2</a></li>
-                <li><a href="/posts/post-3">Publicación 3</a></li>
-            </ul>
-            <Footer /> <!-- Repeticion (Refact Layout) -->
-        </div>
+    <p>Aquí es donde publicaré sobre mi viaje de aprendizaje Astro.</p>
+    <ul>
+        <li><a href="/posts/post-1">Publicación 1</a></li>
+        <li><a href="/posts/post-2">Publicación 2</a></li>
+        <li><a href="/posts/post-3">Publicación 3</a></li>
+    </ul>
+</BaseLayout>
 
-		<!-- Script -->
-        <script>
-            import "../scripts/menu.js";			
-        </script>
-	</body>
-</html>

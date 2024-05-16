@@ -1,40 +1,16 @@
 ---
-// Importamos componentes reutilizables
-import Footer from '../components/Footer.astro';
-import Header from '../components/Header.astro';
+// Importamos Layout Base
+import BaseLayout from '../layouts/BaseLayout.astro';
 
-// importamos estilos globales
-import '../styles/global.css';
 
 // Declaración de Variables
-const siteName = "Mi Blogcito"
-const pageTitle = "Página de inicio"
+// const siteName = "Mi Blogcito"
+const siteName = "Mi Blogcito";
+const pageTitle = "Home Page";
+
 ---
 <!-- Frontmatter END -->
 
-<html lang="es">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{pageTitle} - {siteName}</title>
-	</head>
-	<!-- Body -->
-	<body>		
-		<div class="site-wrapper"><!-- Repeticion (Refact Layout) -->
-			<Header /> <!-- Repeticion (Refact Layout) -->
-			<h2>{siteName}</h2>
-			<h3> ¡Take your passion and make it happen! &#128515; </h3>
-			<h1>{pageTitle}</h1><!-- Repeticion (Refact Layout) -->
-			
-			
-			<Footer /> <!-- Repeticion (Refact Layout) -->
-		</div>
-
-		<!-- Script -->
-		<script>
-		import "../scripts/menu.js";			
-		</script>
-	</body>
-</html>
+<BaseLayout pageTitle={pageTitle} >
+	<h3> ¡Take your passion and make it happen! &#128515; </h3>
+</BaseLayout>

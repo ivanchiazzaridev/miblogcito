@@ -7,8 +7,8 @@ import Header from '../components/Header.astro';
 import '../styles/global.css';
 
 // Declaración de Variables
-const siteName = "Mi Blogcito"
-const pageTitle = "Página de inicio"
+const siteName = "Mi Blogcito";
+const { pageTitle } = Astro.props;
 ---
 <!-- Frontmatter END -->
 
@@ -24,11 +24,10 @@ const pageTitle = "Página de inicio"
 	<body>		
     <div class="site-wrapper"><!-- Repeticion (Refact Layout) -->
         <Header /> <!-- Repeticion (Refact Layout) -->
-        <h2>{siteName}</h2>
-        <h3> ¡Take your passion and make it happen! &#128515; </h3>
+        <h2>{siteName}</h2>        
         <h1>{pageTitle}</h1><!-- Repeticion (Refact Layout) -->
         
-        
+        <slot />
         <Footer /> <!-- Repeticion (Refact Layout) -->
     </div>
 

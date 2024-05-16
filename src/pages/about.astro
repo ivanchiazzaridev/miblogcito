@@ -1,13 +1,8 @@
 ---
-// importamos estilos globales
-import '../styles/global.css';
+// Importamos Layout Base
+import BaseLayout from '../layouts/BaseLayout.astro';
 
-// Importamos componentes reutilizables
-import Footer from '../components/Footer.astro';
-import Header from '../components/Header.astro';
-
-const siteName = "Mi Blogcito";
-const pageTitle = "Sobre mi";
+const pageTitle = "About Yo";
 
 const identity = {
     firstName: "Iván",
@@ -22,66 +17,47 @@ const happy = true;
 const finished = false;
 const goal = 3;
 
-const skillColor = "navy";
-const fontWeight = "600";
+// const skillColor = "orangered";
+const fontWeight = "900";
 const textCase = "uppercase";
+const skillColor  = "orangered";
 
 ---
 <!-- Frontmatter END -->
 
-<html lang="es">
-	<head>
-		<meta charset="UTF-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{pageTitle} - {siteName}</title>
-        <style define:vars={{skillColor, fontWeight, textCase}} >
-            h1 {
-                color:purple;
-                font-size: 4rem;
-            }
+<style define:vars={{skillColor, fontWeight, textCase}} >
+  
 
-            .skill {
-                color: var(--skillColor);
-                font-weight: var(--fontWeight);
-                text-transform: var(--textCase);
-            }
+    .skill {
+        color: var(--skillColor);
+        font-weight: var(--fontWeight);
+        text-transform: var(--textCase);
+    }
 
-        </style>
-	</head>
-    <!-- Body -->
-	<body>
-        <div class="site-wrapper"><!-- Repeticion (Refact Layout) -->
-            <Header /> <!-- Repeticion (Refact Layout) -->
-        <h1>{pageTitle}</h1><!-- Repeticion (Refact Layout) -->
-        <h2>¡Mi nuevo sitio Astro!</h2>
-        <p>Estoy trabajando en el tutorial introductorio de Astro. Esta es la segunda página de mi sitio web, ¡y es la primera que he construido yo mismo!</p>
-        <p>Este sitio se irá actualizando a medida que vaya completando más partes del tutorial, ¡así que no dejes de visitarlo para ver cómo va mi viaje!</p>
-        <p>He aquí algunos datos sobre mi:</p>
-        <ul>
-            <li>Me llamo {identity.firstName}.</li>
-            <li>Vivo en {identity.country} y trabajo como {identity.occupation}.</li>
-            {identity.hobbies.length >= 2 &&
-            <li>Dos de mis aficiones son: {identity.hobbies[0]} y {identity.hobbies[1]}.</li>
-            }
+</style>
+<BaseLayout pageTitle={pageTitle}  >
+    
+    <h2>¡Mi nuevo sitio Astro!</h2>
+    <p>Estoy trabajando en el tutorial introductorio de Astro. Esta es la segunda página de mi sitio web, ¡y es la primera que he construido yo mismo!</p>
+    <p>Este sitio se irá actualizando a medida que vaya completando más partes del tutorial, ¡así que no dejes de visitarlo para ver cómo va mi viaje!</p>
+    <p>He aquí algunos datos sobre mi:</p>
+    <ul>
+        <li>Me llamo {identity.firstName}.</li>
+        <li>Vivo en {identity.country} y trabajo como {identity.occupation}.</li>
+        {identity.hobbies.length >= 2 &&
+        <li>Dos de mis aficiones son: {identity.hobbies[0]} y {identity.hobbies[1]}.</li>
+        }
+    
+    </ul>
+    <p>Mis habilidades son:</p>
+    <ul>
+        {skills.map((skill) => <li class="skill" >{skill}</li>)}
+    </ul>
+    {happy && <p>I am happy to be learning Astro!</p>}
+    
+    {finished && <p>I finished this tutorial!</p>}
+    
+    {goal === 3 ? <p>My goal is to finish in 3 days.</p> : <p>My goal is not 3 days</p>}
+</BaseLayout>
 
-        </ul>
-        <p>Mis habilidades son:</p>
-        <ul>
-            {skills.map((skill) => <li class="skill" >{skill}</li>)}
-        </ul>
-        {happy && <p>I am happy to be learning Astro!</p>}
 
-        {finished && <p>I finished this tutorial!</p>}
-
-        {goal === 3 ? <p>My goal is to finish in 3 days.</p> : <p>My goal is not 3 days</p>}
-    <Footer /> <!-- Repeticion (Refact Layout) -->
-    </div>
-
-    <!-- Script -->
-    <script>
-		import "../scripts/menu.js";			
-	</script>
-    </body>
-</html>
