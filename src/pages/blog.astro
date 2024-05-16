@@ -3,15 +3,14 @@
 import '../styles/global.css';
 
 // Importamos componentes reutilizables
-import Navigation from '../components/Navigation.astro';
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
-
 
 const siteName = "Mi Blogcito"
 const pageTitle = "Mi blog de Astro aprendizaje"
 
 ---
+<!-- Frontmatter END -->
 
 <html lang="es">
 	<head>
@@ -21,18 +20,21 @@ const pageTitle = "Mi blog de Astro aprendizaje"
 		<meta name="generator" content={Astro.generator} />
 		<title>{pageTitle} - {siteName}</title>
 	</head>
+	<!-- Body -->    
 	<body>
-        <div class="site-wrapper">            
-            <Header />
-            <h1>{pageTitle}</h1>
+        <div class="site-wrapper"><!-- Repeticion (Refact Layout) -->            
+            <Header /> <!-- Repeticion (Refact Layout) -->
+            <h1>{pageTitle}</h1><!-- Repeticion (Refact Layout) -->
             <p>Aquí es donde publicaré sobre mi viaje de aprendizaje Astro.</p>
             <ul>
                 <li><a href="/posts/post-1">Publicación 1</a></li>
                 <li><a href="/posts/post-2">Publicación 2</a></li>
                 <li><a href="/posts/post-3">Publicación 3</a></li>
             </ul>
-            <Footer />
+            <Footer /> <!-- Repeticion (Refact Layout) -->
         </div>
+
+		<!-- Script -->
         <script>
             import "../scripts/menu.js";			
         </script>
