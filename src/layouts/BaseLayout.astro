@@ -26,8 +26,10 @@ const { pageTitle } = Astro.props;
         <Header /> <!-- Repeticion (Refact Layout) -->
         <h2 class="site-title" >{siteTitle}</h2>        
         <h1>{pageTitle}</h1><!-- Repeticion (Refact Layout) -->
-        
-        <slot />
+        <main>
+
+			<slot />
+		</main>
         <Footer /> <!-- Repeticion (Refact Layout) -->
     </div>
 
