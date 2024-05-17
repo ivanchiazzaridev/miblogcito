@@ -7,7 +7,7 @@ import Header from '../components/Header.astro';
 import '../styles/global.css';
 
 // Declaración de Variables
-const siteName = "Mi Blogcito";
+const siteTitle = "Mi Blogcito";
 const { pageTitle } = Astro.props;
 ---
 <!-- Frontmatter END -->
@@ -18,13 +18,13 @@ const { pageTitle } = Astro.props;
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>{pageTitle} - {siteName}</title>
+		<title>{pageTitle} - {siteTitle}</title>
 	</head>
 	<!-- Body -->
 	<body>		
     <div class="site-wrapper"><!-- Repeticion (Refact Layout) -->
         <Header /> <!-- Repeticion (Refact Layout) -->
-        <h2>{siteName}</h2>        
+        <h2 class="site-title" >{siteTitle}</h2>        
         <h1>{pageTitle}</h1><!-- Repeticion (Refact Layout) -->
         
         <slot />

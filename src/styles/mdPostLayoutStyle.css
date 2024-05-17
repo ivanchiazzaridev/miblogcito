@@ -1,0 +1,6 @@
+.astro-logo {
+    filter: drop-shadow(-2px 3px 4px rgba(55, 88, 13, 0.879));
+    mix-blend-mode: difference;
+    margin-inline: auto;
+    display: block;
+  }
