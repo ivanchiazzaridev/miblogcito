@@ -5,9 +5,10 @@ import Header from '../components/Header.astro';
 
 // importamos estilos globales
 import '../styles/global.css';
+import '../styles/lv-overlay.css';
 
 // Declaración de Variables
-const siteTitle = "Mi Blogcito";
+const siteTitle = "RED  Checkbox";
 const { pageTitle } = Astro.props;
 ---
 <!-- Frontmatter END -->
@@ -21,21 +22,24 @@ const { pageTitle } = Astro.props;
 		<title>{pageTitle} - {siteTitle}</title>
 	</head>
 	<!-- Body -->
-	<body>		
-    <div class="site-wrapper"><!-- Repeticion (Refact Layout) -->
-        <Header /> <!-- Repeticion (Refact Layout) -->
-        <h2 class="site-title" >{siteTitle}</h2>        
-        <h1>{pageTitle}</h1><!-- Repeticion (Refact Layout) -->
-        <main>
-
-			<slot />
-		</main>
-        <Footer /> <!-- Repeticion (Refact Layout) -->
-    </div>
-
+	<body>
+			
+			<div class="site-wrapper"><!-- Repeticion (Refact Layout) -->
+				<Header /> <!-- Repeticion (Refact Layout) -->
+				<h2 class="site-title" >{siteTitle}</h2>        
+				<h1>{pageTitle}</h1><!-- Repeticion (Refact Layout) -->
+				<main>
+					
+					<slot />
+				</main>
+				<Footer /> <!-- Repeticion (Refact Layout) -->
+				<input type="checkbox" checked  name="" id="">
+			</div>
+			
 		<!-- Script -->
 		<script>
-		import "../scripts/menu.js";			
-		</script>
+			import "../scripts/menu.js";			
+			</script>
 	</body>
-</html>
+	</html>
+	

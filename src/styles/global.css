@@ -2,6 +2,12 @@
     box-sizing: border-box;
 }
 
+img {
+    max-width: 100%;
+    display: block;
+}
+
+
 html {
     background-color: #f1f5f9;
     font-family: system-ui, sans-serif;
@@ -22,7 +28,7 @@ body {
     margin: 0 auto;
     padding: 0;
     padding: 1rem;
-    /* min-height: 100vh; */
+    min-height: 100vh;
     
     
     
@@ -32,7 +38,7 @@ body {
     line-height: 1.5;
     margin: 0;
     padding: 1rem 0;
-    min-height: 100vh;
+    /* min-height: 100vh; */
     background-image: linear-gradient(199deg, rgb(207,242,242) 90%,rgba(194, 211, 255, 0.597) 10%);
     background-image: linear-gradient(69deg, rgb(207,242,242) 10%,rgba(23, 65, 57, 0.364) 90%);
   }
@@ -47,7 +53,7 @@ body {
     padding-top: 1rem;
     width: min(100% - 2rem, 88ch);
     margin-inline: auto;
-    min-height: 100vh;
+    /* min-height: 100vh; */
     padding: 1rem;
     background: #365f2834;
     border: 2px solid #ffffffc4;
@@ -55,7 +61,21 @@ body {
     border-radius: 13px;
     border-left: 3px solid #519f6345;
     box-shadow: -8px 8px 144px rgba(163, 231, 74, 0.879);
+
+
+   
   }
+.site-wrapper > input{
+    outline: 10px solid red;
+
+  }
+  .site-wrapper:has(input:checked) {
+    
+    
+    filter:blur(8px);
+     /*low-vision simulation Testing*/
+    
+}
 
 h1 {
     color: purple;
