@@ -15,7 +15,7 @@ image:
 
 pubDate: 2022-07-15
 
-tags: ["astro", "aprender en público", "contratiempos", "comunidad"]
+tags: ["astro", "learn by doing", "step by step", "comunidad"]
 
 ---
 

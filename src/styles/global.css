@@ -65,17 +65,7 @@ body {
 
    
   }
-.site-wrapper > input{
-    outline: 10px solid red;
 
-  }
-  .site-wrapper:has(input:checked) {
-    
-    
-    filter:blur(8px);
-     /*low-vision simulation Testing*/
-    
-}
 
 h1 {
     color: purple;
